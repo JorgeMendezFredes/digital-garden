@@ -1,11 +1,25 @@
+# Sistema operativo
 .DS_Store
-.gitignore
-node_modules
-public
-prof
-tsconfig.tsbuildinfo
-.obsidian
-.quartz-cache
-private/
+Thumbs.db
+
+# Configuración local / IDE
 .replit
 replit.nix
+tsconfig.tsbuildinfo
+
+# Obsidian
+.obsidian/
+
+# Carpetas privadas (no publicar)
+private/
+prof/
+
+# Node / Quartz cache
+node_modules/
+.quartz-cache/
+.cache/
+
+# Build output (se genera en cada deploy)
+public/
+
+
