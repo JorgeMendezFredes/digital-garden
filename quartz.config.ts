@@ -75,20 +75,21 @@ const config: QuartzConfig = {
     ],
     filters: [Plugin.RemoveDrafts()],
     emitters: [
-      Plugin.AliasRedirects(),
       Plugin.ComponentResources(),
-      Plugin.ContentPage(),
-      Plugin.FolderPage(),
-      Plugin.TagPage(),
+      // Debe ir antes de FolderPage/TagPage
       Plugin.ContentIndex({
         enableSiteMap: true,
         enableRSS: true,
       }),
+      Plugin.ContentPage(),
+      Plugin.FolderPage(),
+      Plugin.TagPage(),
       Plugin.Assets(),
       Plugin.Static(),
       Plugin.Favicon(),
       Plugin.NotFoundPage(),
-      // Comment out CustomOgImages to speed up build time
+      Plugin.AliasRedirects(),
+      // Opcional: puede ralentizar builds, déjalo si lo necesitas
       Plugin.CustomOgImages(),
     ],
   },
