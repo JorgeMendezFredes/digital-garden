@@ -86,7 +86,3 @@ Mis notas y contenidos aquí publicados están bajo licencia **Creative Commons 
 
 ---
 
-```
-
-🔹 Ahora tendrás 4 **badges en la cabecera**: estado del deploy, licencia, última actualización y si el sitio está online.  
-
