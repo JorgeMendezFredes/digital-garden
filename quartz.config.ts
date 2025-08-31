@@ -15,8 +15,21 @@ const config: QuartzConfig = {
     analytics: {
       provider: "plausible",
     },
-    locale: "es-CL",
+    locale: "en-US",
     baseUrl: "https://jorgemendezfredes.github.io/digital-garden",
+
+    //   configuration: {
+    // pageTitle: "Digital Garden",
+    // pageTitleSuffix: "",
+    // enableSPA: true,
+    // enablePopovers: true,
+    // analytics: {
+    //   provider: "plausible",
+    // },
+    // locale: "es-CL",
+    // baseUrl: "https://jorgemendezfredes.github.io/digital-garden",
+
+
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "modified",
     theme: {
@@ -75,26 +88,20 @@ const config: QuartzConfig = {
     ],
     filters: [Plugin.RemoveDrafts()],
     emitters: [
+      Plugin.AliasRedirects(),
       Plugin.ComponentResources(),
-
-      // Debe ir ANTES de FolderPage/TagPage
+      Plugin.ContentPage(),
+      Plugin.FolderPage(),
+      Plugin.TagPage(),
       Plugin.ContentIndex({
         enableSiteMap: true,
         enableRSS: true,
       }),
-
-      Plugin.ContentPage(),
-      Plugin.FolderPage(),
-      Plugin.TagPage(),
-
       Plugin.Assets(),
       Plugin.Static(),
       Plugin.Favicon(),
       Plugin.NotFoundPage(),
-
-      Plugin.AliasRedirects(),
-
-      // Opcional: puede ralentizar builds
+      // Comment out CustomOgImages to speed up build time
       Plugin.CustomOgImages(),
     ],
   },
